@@ -16,11 +16,11 @@ app.get('/', function (req, res){
         'software': softPlat + " " + softVers.join().replace(/,/,'.')
     };
     
-    res.send(obj);
+    res.send(JSON.stringify(obj, null, '\t'));
 });
 
-var port = 3000 || process.env.PORT;
+var port = process.env.PORT;
 
-app.listen(port, function(){
+app.listen(port, process.env.IP, function(){
     console.log('LISTENING');
 });
